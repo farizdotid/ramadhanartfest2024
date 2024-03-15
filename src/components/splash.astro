@@ -1,0 +1,88 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import kidsImage from "~/assets/kids_ilustration_min.png";
+import HeroImage from "~/components/hero-image.astro";
+import Starfield from "~/components/starfield.astro";
+
+const widths = [450, 800];
+const sizes = "(min-width: 640px) 42vw, 67vw";
+---
+
+<section class="relative h-full bg-black">
+  <Starfield />
+  <div id="splash-bg-fallback" class="absolute inset-0 hidden opacity-40">
+    <HeroImage />
+  </div>
+  <div class="relative grid h-full place-items-center sm:grid-cols-2">
+    <h2
+      class="flex flex-col items-center gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
+    >
+      <Icon
+        name="logo_creative_hub_icon_svg"
+        class="size-24 text-white md:size-32"
+      />
+      <div
+        class="gradient-text text-center font-extrabold tracking-tighter text-8xl">
+        RamadhanArtFest
+        <br /> 2024.
+      </div>
+
+      <div
+        class="text-center font-medium tracking-tighter text-2xl">
+        @purwakartacreativehub
+      </div>
+    </h2>
+    <div
+      id="kids_ilustration_min"
+      class="w-2/3 max-w-3xl self-start sm:w-10/12 sm:self-auto sm:justify-self-start"
+    >
+      <Image
+        class="h-full w-full object-cover"
+        src={kidsImage}
+        widths={widths}
+        sizes={sizes}
+        loading="eager"
+        alt=""
+      />
+    </div>
+  </div>
+</section>
+
+<noscript>
+  <style>
+    #splash-bg-fallback {
+      display: block;
+    }
+  </style>
+</noscript>
+
+<style>
+  @keyframes float {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+      transform: translate3d(0, 30px, 0);
+    }
+  }
+
+  #astronaut {
+    animation: float linear 2.5s infinite alternate;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #astronaut {
+      @apply animate-none;
+    }
+
+    :global(#starfield) {
+      @apply hidden;
+    }
+
+    #splash-bg-fallback {
+      @apply block;
+    }
+  }
+</style>

@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+import bgFooterImage from "~/assets/bg_footer.jpg";
+
+const widths = [450, 800, 1200];
+const sizes = "100vw";
+---
+
+<Image
+  class="h-full w-full object-cover"
+  src={bgFooterImage}
+  widths={widths}
+  sizes={sizes}
+  alt=""
+/>
