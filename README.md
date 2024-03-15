@@ -1,4 +1,4 @@
-# RamadhanFest2024 - Ekraf Purwakarta
+# Ramadhan Art Fest 2024 - Ekraf Purwakarta
 
 <div align="center">
 
