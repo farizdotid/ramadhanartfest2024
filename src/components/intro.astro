@@ -1,5 +1,6 @@
 ---
 import ContentSection from "~/components/content-section.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <ContentSection title="Ramadhan Art Fest - Ekraf Purwakarta" id="intro">
@@ -7,4 +8,23 @@ import ContentSection from "~/components/content-section.astro";
   <Fragment slot="lead">
     Eksplorasi Nilai Kesenian Dan Ekonomi Kreatif
   </Fragment>
+
+  <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
+    <a
+      href="https://forms.gle/JjDm75Eb2g71doFFA" target="_blank"
+      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+    >
+      <Icon name="mdi:link" class="size-8" />
+      <span>Pendaftaran Workshop
+      </span>
+    </a>
+    <a
+      href="https://forms.gle/3XNQ1F2zCKS4JXsa8" target="_blank"
+      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+    >
+      <Icon name="mdi:link" class="size-8" />
+      <span>Pendaftaran Bazar</span>
+    </a>
+  </div>
+
 </ContentSection>
