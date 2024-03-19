@@ -2,13 +2,14 @@
 import { getCollection } from "astro:content";
 import ContentSection from "~/components/content-section.astro";
 import ShowcaseCard from "~/components/showcase-card.astro";
+import { Icon } from "astro-icon/components";
 
 const featuredSites = await getCollection(
   "showcase",
-  ({ data }) => "featured" in data,
+  ({ data }) => "featured" in data
 );
 const orderedSites = featuredSites.sort(
-  (a, b) => a.data.featured! - b.data.featured!,
+  (a, b) => a.data.featured! - b.data.featured!
 );
 ---
 
@@ -20,5 +21,437 @@ const orderedSites = featuredSites.sort(
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-1">
       {orderedSites.map((site) => <ShowcaseCard site={site} />)}
     </div>
+  </div>
+
+  <div
+    class="mb-2 w-auto rounded-lg border border-gray-100 bg-gray-50 p-5 dark:border-gray-700 dark:bg-gray-800"
+  >
+    <time class="font-semibold text-gray-900 text-lg dark:text-white"
+      >22 Maret 2024</time
+    >
+    <ol class="divider-gray-200 mt-3 divide-y dark:divide-gray-700">
+      <li>
+        <a
+          href="#"
+          class="block items-center p-3 hover:bg-gray-100 sm:flex dark:hover:bg-gray-700"
+        >
+          <div class="mr-4 font-normal text-base">
+            <span class="font-medium text-gray-900 dark:text-white"
+              >13.00 - 15.00</span
+            >
+          </div>
+
+          <div class="text-gray-600 dark:text-gray-400">
+            <div class="font-normal text-base">
+              <span class="font-medium text-gray-900 dark:text-white"
+                >Seni Rupa by CEA - Melukis Kerudung</span
+              >
+            </div>
+            <div class="font-normal text-sm">
+              Mendapatkan Cat Warna, Kuas, Hoop Sulam, Palet
+            </div>
+            <span
+              class="inline-flex items-center font-normal text-gray-500 text-xs dark:text-gray-400"
+            >
+              <Icon name="mdi:wallet" class="mr-2" />
+              Rp 45.000
+            </span>
+          </div>
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="#"
+          class="block items-center p-3 hover:bg-gray-100 sm:flex dark:hover:bg-gray-700"
+        >
+          <div class="mr-4 font-normal text-base">
+            <span class="font-medium text-gray-900 dark:text-white"
+              >15.00 - 18.00</span
+            >
+          </div>
+
+          <div class="text-gray-600 dark:text-gray-400">
+            <div class="font-normal text-base">
+              <span class="font-medium text-gray-900 dark:text-white"
+                >Business English by BABA English Study - English Easy & Fun</span
+              >
+            </div>
+            <div class="font-normal text-sm">
+              Materi Pelatihan dan Jejaring Baru
+            </div>
+            <span
+              class="inline-flex items-center font-normal text-gray-500 text-xs dark:text-gray-400"
+            >
+              <Icon name="mdi:wallet" class="mr-2" />
+              Gratis
+            </span>
+          </div>
+        </a>
+      </li>
+    </ol>
+  </div>
+
+  <div
+    class="mb-2 w-auto rounded-lg border border-gray-100 bg-gray-50 p-5 dark:border-gray-700 dark:bg-gray-800"
+  >
+    <time class="font-semibold text-gray-900 text-lg dark:text-white"
+      >23 Maret 2024</time
+    >
+    <ol class="divider-gray-200 mt-3 divide-y dark:divide-gray-700">
+      <li>
+        <a
+          href="#"
+          class="block items-center p-3 hover:bg-gray-100 sm:flex dark:hover:bg-gray-700"
+        >
+          <div class="mr-4 font-normal text-base">
+            <span class="font-medium text-gray-900 dark:text-white"
+              >09.00 - 12.00</span
+            >
+          </div>
+
+          <div class="text-gray-600 dark:text-gray-400">
+            <div class="font-normal text-base">
+              <span class="font-medium text-gray-900 dark:text-white"
+                >Kelas Kriya - Kriya bersama Maeen Craft</span
+              >
+            </div>
+            <div class="font-normal text-sm">
+              Mendapatkan Materi Pelatihan, Benang 4 Bobbin, Hakpen, Kawat, Lem, dan Dakron
+            </div>
+            <span
+              class="inline-flex items-center font-normal text-gray-500 text-xs dark:text-gray-400"
+            >
+              <Icon name="mdi:wallet" class="mr-2" />
+              Rp 35.000
+            </span>
+          </div>
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="#"
+          class="block items-center p-3 hover:bg-gray-100 sm:flex dark:hover:bg-gray-700"
+        >
+          <div class="mr-4 font-normal text-base">
+            <span class="font-medium text-gray-900 dark:text-white"
+              >14.00 - 18.00</span
+            >
+          </div>
+
+          <div class="text-gray-600 dark:text-gray-400">
+            <div class="font-normal text-base">
+              <span class="font-medium text-gray-900 dark:text-white"
+                >Kelas Content Creator by KOPEL - Content Creator with KOPEL</span
+              >
+            </div>
+            <div class="font-normal text-sm">
+              Materi Pelatihan dan Jejaring Baru
+            </div>
+            <span
+              class="inline-flex items-center font-normal text-gray-500 text-xs dark:text-gray-400"
+            >
+              <Icon name="mdi:wallet" class="mr-2" />
+              Gratis
+            </span>
+          </div>
+        </a>
+      </li>
+    </ol>
+  </div>
+
+  <div
+    class="mb-2 w-auto rounded-lg border border-gray-100 bg-gray-50 p-5 dark:border-gray-700 dark:bg-gray-800"
+  >
+    <time class="font-semibold text-gray-900 text-lg dark:text-white"
+      >25 Maret 2024</time
+    >
+    <ol class="divider-gray-200 mt-3 divide-y dark:divide-gray-700">
+      <li>
+        <a
+          href="#"
+          class="block items-center p-3 hover:bg-gray-100 sm:flex dark:hover:bg-gray-700"
+        >
+          <div class="mr-4 font-normal text-base">
+            <span class="font-medium text-gray-900 dark:text-white"
+              >14.00 - 18.00</span
+            >
+          </div>
+
+          <div class="text-gray-600 dark:text-gray-400">
+            <div class="font-normal text-base">
+              <span class="font-medium text-gray-900 dark:text-white"
+                >Fotografi dan Videografi by KOPEL - Fotografi with KOPEL</span
+              >
+            </div>
+            <div class="font-normal text-sm">
+              Materi Pelatihan dan Jejaring Baru
+            </div>
+            <span
+              class="inline-flex items-center font-normal text-gray-500 text-xs dark:text-gray-400"
+            >
+              <Icon name="mdi:wallet" class="mr-2" />
+              Gratis
+            </span>
+          </div>
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="#"
+          class="block items-center p-3 hover:bg-gray-100 sm:flex dark:hover:bg-gray-700"
+        >
+          <div class="mr-4 font-normal text-base">
+            <span class="font-medium text-gray-900 dark:text-white"
+              >14.00 - 18.00</span
+            >
+          </div>
+
+          <div class="text-gray-600 dark:text-gray-400">
+            <div class="font-normal text-base">
+              <span class="font-medium text-gray-900 dark:text-white"
+                >Kelas Batik by Wida - Batik by Wida</span
+              >
+            </div>
+            <div class="font-normal text-sm">
+              Karya Batik ( Kain 25x25 cm ) & Doorprize
+            </div>
+            <span
+              class="inline-flex items-center font-normal text-gray-500 text-xs dark:text-gray-400"
+            >
+              <Icon name="mdi:wallet" class="mr-2" />
+              Rp 35.000
+            </span>
+          </div>
+        </a>
+      </li>
+    </ol>
+  </div>
+
+  <div
+    class="mb-2 w-auto rounded-lg border border-gray-100 bg-gray-50 p-5 dark:border-gray-700 dark:bg-gray-800"
+  >
+    <time class="font-semibold text-gray-900 text-lg dark:text-white"
+      >26 Maret 2024</time
+    >
+    <ol class="divider-gray-200 mt-3 divide-y dark:divide-gray-700">
+      <li>
+        <a
+          href="#"
+          class="block items-center p-3 hover:bg-gray-100 sm:flex dark:hover:bg-gray-700"
+        >
+          <div class="mr-4 font-normal text-base">
+            <span class="font-medium text-gray-900 dark:text-white"
+              >14.00 - 18.00</span
+            >
+          </div>
+
+          <div class="text-gray-600 dark:text-gray-400">
+            <div class="font-normal text-base">
+              <span class="font-medium text-gray-900 dark:text-white"
+                >Digital Marketing by KOPEL - Ruang Lingkup Desain Grafis dalam Digital Marketing</span
+              >
+            </div>
+            <div class="font-normal text-sm">
+              Materi Pelatihan dan Jejaring Baru
+            </div>
+            <span
+              class="inline-flex items-center font-normal text-gray-500 text-xs dark:text-gray-400"
+            >
+              <Icon name="mdi:wallet" class="mr-2" />
+              Gratis
+            </span>
+          </div>
+        </a>
+      </li>
+    </ol>
+  </div>
+
+  <div
+    class="mb-2 w-auto rounded-lg border border-gray-100 bg-gray-50 p-5 dark:border-gray-700 dark:bg-gray-800"
+  >
+    <time class="font-semibold text-gray-900 text-lg dark:text-white"
+      >27 Maret 2024</time
+    >
+    <ol class="divider-gray-200 mt-3 divide-y dark:divide-gray-700">
+      <li>
+        <a
+          href="#"
+          class="block items-center p-3 hover:bg-gray-100 sm:flex dark:hover:bg-gray-700"
+        >
+          <div class="mr-4 font-normal text-base">
+            <span class="font-medium text-gray-900 dark:text-white"
+              >09.00 - 12.00</span
+            >
+          </div>
+
+          <div class="text-gray-600 dark:text-gray-400">
+            <div class="font-normal text-base">
+              <span class="font-medium text-gray-900 dark:text-white"
+                >Kelas Craft Stenciling by Rumah Kreatif Ufaira - Kelas Stenciling Canvas Tote Bag</span
+              >
+            </div>
+            <div class="font-normal text-sm">
+              Materi dan Hasil Karya Tote Bag Peserta
+            </div>
+            <span
+              class="inline-flex items-center font-normal text-gray-500 text-xs dark:text-gray-400"
+            >
+              <Icon name="mdi:wallet" class="mr-2" />
+              Rp 35.000
+            </span>
+          </div>
+        </a>
+      </li>
+    </ol>
+  </div>
+
+  <div
+    class="mb-2 w-auto rounded-lg border border-gray-100 bg-gray-50 p-5 dark:border-gray-700 dark:bg-gray-800"
+  >
+    <time class="font-semibold text-gray-900 text-lg dark:text-white"
+      >28 Maret 2024</time
+    >
+    <ol class="divider-gray-200 mt-3 divide-y dark:divide-gray-700">
+      <li>
+        <a
+          href="#"
+          class="block items-center p-3 hover:bg-gray-100 sm:flex dark:hover:bg-gray-700"
+        >
+          <div class="mr-4 font-normal text-base">
+            <span class="font-medium text-gray-900 dark:text-white"
+              >14.00 - 18.00</span
+            >
+          </div>
+
+          <div class="text-gray-600 dark:text-gray-400">
+            <div class="font-normal text-base">
+              <span class="font-medium text-gray-900 dark:text-white"
+                >Kelas Public Speaking - Public Speaking by Iyan MC</span
+              >
+            </div>
+            <div class="font-normal text-sm">
+              Biaya HTM Konsumsi Buka Puasa & E-Certificate
+            </div>
+            <span
+              class="inline-flex items-center font-normal text-gray-500 text-xs dark:text-gray-400"
+            >
+              <Icon name="mdi:wallet" class="mr-2" />
+              Rp 30.000
+            </span>
+          </div>
+        </a>
+      </li>
+    </ol>
+  </div>
+
+  <div
+    class="mb-2 w-auto rounded-lg border border-gray-100 bg-gray-50 p-5 dark:border-gray-700 dark:bg-gray-800"
+  >
+    <time class="font-semibold text-gray-900 text-lg dark:text-white"
+      >29 Maret 2024</time
+    >
+    <ol class="divider-gray-200 mt-3 divide-y dark:divide-gray-700">
+      <li>
+        <a
+          href="#"
+          class="block items-center p-3 hover:bg-gray-100 sm:flex dark:hover:bg-gray-700"
+        >
+          <div class="mr-4 font-normal text-base">
+            <span class="font-medium text-gray-900 dark:text-white"
+              >14.00 - 18.00</span
+            >
+          </div>
+
+          <div class="text-gray-600 dark:text-gray-400">
+            <div class="font-normal text-base">
+              <span class="font-medium text-gray-900 dark:text-white"
+                >Subsektor Seni Rupa - Creative Class-Doodle Art</span
+              >
+            </div>
+            <div class="font-normal text-sm">
+              Mendapatkan Pot Teracota, Cat Acrylic Warna, Kuas, Palet, Gelas Plastik
+            </div>
+            <span
+              class="inline-flex items-center font-normal text-gray-500 text-xs dark:text-gray-400"
+            >
+              <Icon name="mdi:wallet" class="mr-2" />
+              Rp 100.000
+            </span>
+          </div>
+        </a>
+      </li>
+    </ol>
+  </div>
+
+  <div
+    class="mb-2 w-auto rounded-lg border border-gray-100 bg-gray-50 p-5 dark:border-gray-700 dark:bg-gray-800"
+  >
+    <time class="font-semibold text-gray-900 text-lg dark:text-white"
+      >30 Maret 2024</time
+    >
+    <ol class="divider-gray-200 mt-3 divide-y dark:divide-gray-700">
+      <li>
+        <a
+          href="#"
+          class="block items-center p-3 hover:bg-gray-100 sm:flex dark:hover:bg-gray-700"
+        >
+          <div class="mr-4 font-normal text-base">
+            <span class="font-medium text-gray-900 dark:text-white"
+              >14.00 - 18.00</span
+            >
+          </div>
+
+          <div class="text-gray-600 dark:text-gray-400">
+            <div class="font-normal text-base">
+              <span class="font-medium text-gray-900 dark:text-white"
+                >Subsektor Desain Interior - Creative Class</span
+              >
+            </div>
+            <div class="font-normal text-sm">
+              Materi Pelatihan dan Jejaring Baru
+            </div>
+            <span
+              class="inline-flex items-center font-normal text-gray-500 text-xs dark:text-gray-400"
+            >
+              <Icon name="mdi:wallet" class="mr-2" />
+              Gratis
+            </span>
+          </div>
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="#"
+          class="block items-center p-3 hover:bg-gray-100 sm:flex dark:hover:bg-gray-700"
+        >
+          <div class="mr-4 font-normal text-base">
+            <span class="font-medium text-gray-900 dark:text-white"
+              >15.00 - 18.00</span
+            >
+          </div>
+
+          <div class="text-gray-600 dark:text-gray-400">
+            <div class="font-normal text-base">
+              <span class="font-medium text-gray-900 dark:text-white"
+                >Subsektor DKV - Desain Komunikasi Visual </span
+              >
+            </div>
+            <div class="font-normal text-sm">
+              Materi Pelatihan dan Jejaring Baru
+            </div>
+            <span
+              class="inline-flex items-center font-normal text-gray-500 text-xs dark:text-gray-400"
+            >
+              <Icon name="mdi:wallet" class="mr-2" />
+              Gratis
+            </span>
+          </div>
+        </a>
+      </li>
+    </ol>
   </div>
 </ContentSection>
